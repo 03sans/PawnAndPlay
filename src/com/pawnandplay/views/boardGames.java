@@ -15,9 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import com.pawnandplay.controller.insertionSort;
 import com.pawnandplay.controller.mergeSort;
-
-
-
+import com.pawnandplay.controller.binarySearch;
 
 /**
  *
