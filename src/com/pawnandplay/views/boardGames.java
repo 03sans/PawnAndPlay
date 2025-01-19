@@ -17,6 +17,8 @@ import com.pawnandplay.controller.insertionSort;
 import com.pawnandplay.controller.mergeSort;
 import com.pawnandplay.controller.binarySearch;
 
+
+
 /**
  *
  * @author 23048503_SanskritiAgrahari
@@ -155,6 +157,10 @@ public class boardGames extends javax.swing.JFrame {
         mergeComboBox = new javax.swing.JComboBox<>();
         selectionComboBox = new javax.swing.JComboBox<>();
         insertionComboBox = new javax.swing.JComboBox<>();
+        searchLabel = new javax.swing.JLabel();
+        searchField = new javax.swing.JTextField();
+        searchBox = new javax.swing.JComboBox<>();
+        searchButton = new javax.swing.JButton();
         entryPage = new javax.swing.JPanel();
         entryHeader = new javax.swing.JPanel();
         entryheader1 = new javax.swing.JLabel();
@@ -588,6 +594,24 @@ public class boardGames extends javax.swing.JFrame {
             }
         });
 
+        searchLabel.setFont(new java.awt.Font("ITF Devanagari Marathi", 1, 18)); // NOI18N
+        searchLabel.setForeground(new java.awt.Color(255, 255, 255));
+        searchLabel.setText("ENTER");
+
+        searchField.setBackground(new java.awt.Color(255, 204, 204));
+
+        searchBox.setFont(new java.awt.Font("ITF Devanagari Marathi", 1, 18)); // NOI18N
+        searchBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Search By", "Game ID", "Product Name" }));
+
+        searchButton.setBackground(new java.awt.Color(255, 204, 204));
+        searchButton.setFont(new java.awt.Font("ITF Devanagari Marathi", 0, 18)); // NOI18N
+        searchButton.setText("SEARCH");
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout productPageLayout = new javax.swing.GroupLayout(productPage);
         productPage.setLayout(productPageLayout);
         productPageLayout.setHorizontalGroup(
@@ -600,13 +624,26 @@ public class boardGames extends javax.swing.JFrame {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1004, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(productPageLayout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(95, 95, 95)
-                                .addGroup(productPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(productPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(selectionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(mergeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(insertionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(35, 35, 35)
+                                .addGroup(productPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(productPageLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(selectionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(insertionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(mergeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(productPageLayout.createSequentialGroup()
+                                        .addGap(63, 63, 63)
+                                        .addComponent(searchLabel)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(searchBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, productPageLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(149, 149, 149)))))
+                        .addGap(34, 34, 34)
                         .addComponent(prodimg, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(353, Short.MAX_VALUE))
         );
@@ -616,21 +653,30 @@ public class boardGames extends javax.swing.JFrame {
                 .addComponent(productHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(141, 141, 141)
                 .addGroup(productPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(productPageLayout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(168, 168, 168))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, productPageLayout.createSequentialGroup()
                         .addComponent(prodimg)
                         .addContainerGap(336, Short.MAX_VALUE))
                     .addGroup(productPageLayout.createSequentialGroup()
-                        .addComponent(selectionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(insertionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(mergeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(306, 306, 306))))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(productPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(productPageLayout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(168, 168, 168))
+                            .addGroup(productPageLayout.createSequentialGroup()
+                                .addGroup(productPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(selectionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(insertionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(mergeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(72, 72, 72)
+                                .addGroup(productPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(searchLabel)
+                                    .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(searchBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(34, 34, 34)
+                                .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(319, 319, 319))))))
         );
 
         entryPage.setBackground(new java.awt.Color(128, 74, 74));
@@ -1456,6 +1502,52 @@ public class boardGames extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_mergeComboBoxActionPerformed
 
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        // TODO add your handling code here:                                           
+    
+        String searchValue = searchField.getText().trim();
+        String searchCriteria = (String) searchBox.getSelectedItem();
+
+        // Validate input
+        if (searchValue.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Please enter a value to search.", "Input Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        boolean searchByName = "Product Name".equalsIgnoreCase(searchCriteria);
+        binarySearch search = new binarySearch();
+        gamesModel result;
+
+        try {
+            // Sort the list first based on the criteria
+            List<gamesModel> sortedList;
+            if (searchByName) {
+                sortedList = new insertionSort().sortAlphabetically(gamesList); // Ensure alphabetical order for binary search
+            } else {
+                sortedList = new selectionSort().sortById(gamesList, false); // Sort by ID in ascending order
+            }
+
+            // Perform binary search
+            result = search.search(searchValue, sortedList, 0, sortedList.size() - 1, searchByName);
+
+            if (result == null) {
+                javax.swing.JOptionPane.showMessageDialog(this, "No matching data found.", "Search Result", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                javax.swing.JTable resultTable = new javax.swing.JTable(new javax.swing.table.DefaultTableModel(
+                    new Object[][] {
+                        {result.getID(), result.getProductname(), result.getLevel(), result.getGenre(), result.getAge(), result.getStock(), result.getPrice(), result.getBrand()}
+                    },
+                    new String[] {"ID", "Product Name", "Level", "Genre", "Age", "Stock", "Price", "Brand"}
+                ));
+
+                javax.swing.JScrollPane scrollPane = new javax.swing.JScrollPane(resultTable);
+                javax.swing.JOptionPane.showMessageDialog(this, scrollPane, "Search Result", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (NumberFormatException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Invalid input for ID. Please enter a numeric value.", "Input Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_searchButtonActionPerformed
+
     /**
      * Validates a single input field based on specific criteria and updates its
      * visual state.
@@ -1678,6 +1770,10 @@ public class boardGames extends javax.swing.JFrame {
     private javax.swing.JPanel productHeader;
     private javax.swing.JPanel productPage;
     private javax.swing.JProgressBar progress;
+    private javax.swing.JComboBox<String> searchBox;
+    private javax.swing.JButton searchButton;
+    private javax.swing.JTextField searchField;
+    private javax.swing.JLabel searchLabel;
     private javax.swing.JComboBox<String> selectionComboBox;
     private javax.swing.JLabel stockErrorLabel;
     private javax.swing.JTextField stockfield;
